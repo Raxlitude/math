@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:title" content="AS Level Mathematics">
+    <meta property="og:description" content="9709 Past Papers">
+    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio & Projects</title>
+    <title>AS Level Mathematics</title>
     <style>
         * {
             box-sizing: border-box;
@@ -101,21 +104,26 @@
     <!-- This is the "Disguise" page she will see first -->
     <div class="container" id="main-content">
         <h1>9709 Series</h1>
-        <p>Solutions, past papers and mark schemes</p>
+        <p>9709 Mathematics past papers, marking schemes, and examiner reports staging environment.</p>
         <button class="btn" onclick="revealSurprise()">Open</button>
     </div>
 
-    <!-- This is the hidden Birthday Surprise section -->
+    <!-- The container is empty so mobile apps see no text here -->
     <div class="overlay" id="birthday-overlay">
-        <h2>Happy Birthday, Maliha! 🎉</h2>
-        <p>May your new year be filled with happiness, blessings and everything you've been wishing for<br>And I hope you ace your AS papers, you've got this!</p>
+        <h2 id="surprise-heading"></h2>
+        <p id="surprise-text"></p>
     </div>
 
     <script>
         function revealSurprise() {
-            // Smoothly display the hidden birthday overlay
+            // 1. Inject the text safely at execution time so scrapers can't read it
+            document.getElementById('surprise-heading').innerText = "🎉 Happy Birthday, Maliha! 🎂";
+            document.getElementById('surprise-text').innerText = "Hope you have an amazing day filled with joy, laughter, and everything you've been wishing for! ✨";
+            
+            // 2. Smoothly display the hidden birthday overlay
             document.getElementById('birthday-overlay').classList.add('active');
         }
     </script>
 </body>
 </html>
+
